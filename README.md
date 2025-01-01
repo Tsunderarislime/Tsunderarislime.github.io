@@ -1,2 +1,4 @@
 # Tsunderarislime.github.io
-Personal website
+My personal website which links a variety of projects I have worked on.
+
+[Check it out](https://tsunderarislime.github.io)

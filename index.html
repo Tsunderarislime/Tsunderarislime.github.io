@@ -1,1 +1,54 @@
-"Hello World" 
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tsunderarislime</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Links to local files -->
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+        <!-- Link to the 'Rubik' font from Google Fonts -->
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+        </style>
+    </head>
+    <body>
+        <h1 id="title">
+            KYLE MUI
+        </h1>
+
+        <div class="horizontal-line"></div>
+        <!-- Main content goes inside this div -->
+        <div id="main-content">
+            <div id="big-display">
+                <div id="big-image-container">
+                    <a id="big-link" href="https://github.com/Tsunderarislime/atsui-yo">
+                        <img id="big-image" src="assets/atsui-yo.png">
+                    </a>
+                </div>
+                <div id="big-text">
+                    <h2 id="big-title">
+                        atsui-yo
+                    </h2>
+                    <hr>
+                    <p id="big-description">
+                        This is my first Discord bot I developed, using Python and discord.py. It is a weather forecast bot which can provide a 12-hour forecast, 1-7 day forecast, as well as provide automated daily weather forecasts. <br><br> Daily forecasts also come with a fun video depending on the highest temperature for that day. All of the functionality can be configured purely through using chat commands in a Discord channel.
+                    </p>
+                </div>
+                <div id="controls">
+                    <img src="assets/atsui-yo.png" alt="1" onclick="update_big(this)">
+                    <img src="assets/maria.png" alt="2" onclick="update_big(this)">
+                    <img src="assets/bun.png" alt="3" onclick="update_big(this)">
+                </div>
+            </div>
+        </div>
+        <div class="horizontal-line"></div>
+    </body>
+    <footer>
+        <p class="footer-text" style="color: skyblue;">
+            Click on the big image to go to that project's page. Or, check out my
+        </p>
+        <a class="footer-text" href="https://github.com/Tsunderarislime">
+            Github
+        </a>
+    </footer>
+</html>

@@ -1,0 +1,174 @@
+/* Universal base font */
+* {
+    font-family: "Rubik", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+/* General CSS, design for mobile first */
+body {
+    background-image: url(assets/pl-tile.jpg);
+    backdrop-filter: blur(2px) brightness(80%);
+    padding: 1%;
+    margin: -1%;
+}
+
+#title {
+    font-weight: 650;
+    font-size: 8vh;
+    text-align: center;
+    color: lightskyblue;
+    text-shadow: 4px 4px 2px black;
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+
+.horizontal-line {
+    max-width: 97.5%;
+    border: 0.25vh rgb(192, 192, 192) solid;
+    margin: auto;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+
+#main-content {
+    max-width: 95%;
+    height: auto;
+    margin: auto;
+    aspect-ratio: 9/16;
+    backdrop-filter: blur(5px) brightness(80%);
+    border-radius: 5px;
+}
+
+#big-display {
+    max-height: 60%;
+    max-width: 100%;
+    height: 100%;
+}
+
+#big-image-container {
+    width: 95%;
+    aspect-ratio: 1;
+    padding: 1%;
+    margin: auto;
+}
+
+#big-image {
+    max-height: 100%;
+    max-width: 100%;
+    display: block;
+    margin: auto;
+    box-shadow: 5px 5px 5px black;
+}
+
+#big-text {
+    max-width: 100%;
+    margin: auto;
+    padding: 0.5%;
+    border: 2px lime solid;
+    height: 50%;
+}
+
+#big-title {
+    text-align: center;
+    color: lightskyblue;
+    font-size: 4vh;
+    display: block;
+    margin: auto;
+    text-shadow: 2px 2px 2px black;
+}
+
+#big-description {
+    font-size: 1.5vh;
+    color: lightskyblue;
+    text-shadow: 1px 1px 2px black;
+}
+
+#controls {
+    display: block;
+    max-width: 100%;
+    height: 21%;
+    padding: 0.5%;
+    border: 2px blue solid;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+#controls img {
+    max-height: 100%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#controls img:hover {
+    filter: brightness(115%);
+}
+
+
+/* Handle desktop web browsers */
+@media only screen and (orientation: landscape) {
+    #title {
+        font-size: 8vw;
+    }
+
+    #main-content {
+        aspect-ratio: 23/9;
+    }
+
+    #big-display {
+        max-height: 100%;
+        max-width: 100%;
+    }
+
+    #big-image-container {
+        height: 95%;
+        width: auto;
+        float: left;
+    }
+
+    #big-text {
+        width: 58.5%;
+        height: 66%;
+        float: right;
+    }
+
+    #big-title {
+        text-align: center;
+        color: lightskyblue;
+        font-size: 4vw;
+    }
+
+    #big-description {
+        font-size: 1.5vw;
+    }
+
+    #controls {
+        float: right;
+        width: 58.5%;
+        height: 25%;
+    }
+}
+
+
+/* Footer section */
+footer {
+    text-align: center;
+    padding: 1%;
+}
+
+.footer-text {
+    display: inline;
+}
+
+footer > a {
+    font-size: 1.5vh;
+    text-decoration: none;
+    color: lightcyan;
+}
+
+footer > a:hover {
+    color: white;
+}
