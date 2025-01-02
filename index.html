@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>Tsunderarislime</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Links to local files -->
         <link rel="stylesheet" href="style.css">
         <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
-        <script src="script.js"></script>
+        <link rel="preload" as="image" href="assets/atsui-yo.png">
+        <script src="script.js" async></script>
         <!-- Link to the 'Rubik' font from Google Fonts -->
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
@@ -23,7 +24,7 @@
             <div id="big-display">
                 <div id="big-image-container">
                     <a id="big-link" href="https://github.com/Tsunderarislime/atsui-yo">
-                        <img id="big-image" src="assets/atsui-yo.png">
+                        <img id="big-image" src="assets/atsui-yo.png" alt="Enlarged project image">
                     </a>
                 </div>
                 <div id="big-text">
@@ -36,8 +37,8 @@
                 </div>
                 <div id="controls">
                     <img src="assets/atsui-yo.png" alt="1" onclick="update_big(this)">
-                    <img src="assets/maria.png" alt="2" onclick="update_big(this)">
-                    <img src="assets/bun.png" alt="3" onclick="update_big(this)">
+                    <img src="assets/maria.png" alt="2" onclick="update_big(this)" loading="lazy">
+                    <img src="assets/bun.png" alt="3" onclick="update_big(this)" loading="lazy">
                 </div>
             </div>
         </div>
