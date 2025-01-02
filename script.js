@@ -4,19 +4,38 @@ var dict = {
     "3": ["assets/bun.webp", "#", "Bunny", "This is a placeholder (2)"]
 };
 
-function update_big(imgs) {
-    // Get IDs of relevant elements in the big display
+async function update_big(imgs) {
+    // Get IDs of image in the big display
     var big_image = document.getElementById("big-image");
+    
+    // Do nothing if you clicked the same image in the control bar
+    if (big_image.alt == imgs.alt) {
+        return
+    };
+
+    // Get IDs of other relevant elements in the big display
     var big_link = document.getElementById("big-link");
     var big_title = document.getElementById("big-title");
     var big_desc = document.getElementById("big-description");
+    var big_image_container = document.getElementById("big-image-container");
+    var big_text = document.getElementById("big-text");
 
     // Get the array for the image clicked in the control bar
     var items = dict[imgs.alt];
 
-    // Update the values on the document
-    big_image.src = items[0];
-    big_link.href = items[1];
-    big_title.innerHTML = items[2];
-    big_desc.innerHTML = items[3];
+    // Fade out
+    big_image_container.classList.toggle("fade");
+    big_text.classList.toggle("fade");
+
+    // Update the elements just as they completely fade out
+    setTimeout(function() {
+        big_image.alt = imgs.alt;
+        big_image.src = items[0];
+        big_link.href = items[1];
+        big_title.innerHTML = items[2];
+        big_desc.innerHTML = items[3];
+        // Fade in
+        big_image_container.classList.toggle("fade");
+        big_text.classList.toggle("fade");
+    }, 250);
 };

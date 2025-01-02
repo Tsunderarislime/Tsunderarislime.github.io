@@ -53,6 +53,13 @@ body {
     aspect-ratio: 1;
     padding: 1%;
     margin: auto;
+    opacity: 1;
+    transition: opacity 250ms ease-out 0s;
+}
+
+/* When clicking on image in control bar */
+#big-image-container.fade {
+    opacity: 0;
 }
 
 #big-image {
@@ -68,6 +75,13 @@ body {
     margin: auto;
     padding: 0.5%;
     height: 50%;
+    opacity: 1;
+    transition: opacity 0.25s ease-out 0s;
+}
+
+/* When clicking on image in control bar */
+#big-text.fade {
+    opacity: 0;
 }
 
 #big-title {
@@ -152,6 +166,15 @@ body {
     }
 }
 
+
+/* Handling transitions on click */
+#big-image-container.fade {
+    opacity: 0;
+}
+
+#big-text.fade {
+    opacity: 0;
+}
 
 /* Footer section */
 footer {
