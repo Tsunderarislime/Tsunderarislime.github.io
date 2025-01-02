@@ -3,15 +3,18 @@
     <head>
         <title>Tsunderarislime</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Links to the 'Rubik' font from Google Fonts, preload these -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
         <!-- Links to local files -->
+        <link rel="preload" as="image" href="assets/atsui-yo.webp">
+        <link rel="preload" href="style.css" as="style">
         <link rel="stylesheet" href="style.css">
         <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
-        <link rel="preload" as="image" href="assets/atsui-yo.png">
         <script src="script.js" async></script>
-        <!-- Link to the 'Rubik' font from Google Fonts -->
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
-        </style>
     </head>
     <body>
         <h1 id="title">
@@ -24,7 +27,7 @@
             <div id="big-display">
                 <div id="big-image-container">
                     <a id="big-link" href="https://github.com/Tsunderarislime/atsui-yo">
-                        <img id="big-image" src="assets/atsui-yo.png" alt="Enlarged project image">
+                        <img id="big-image" src="assets/atsui-yo.webp" alt="Enlarged project image">
                     </a>
                 </div>
                 <div id="big-text">
@@ -36,9 +39,9 @@
                     </p>
                 </div>
                 <div id="controls">
-                    <img src="assets/atsui-yo.png" alt="1" onclick="update_big(this)">
-                    <img src="assets/maria.png" alt="2" onclick="update_big(this)" loading="lazy">
-                    <img src="assets/bun.png" alt="3" onclick="update_big(this)" loading="lazy">
+                    <img src="assets/atsui-yo.webp" alt="1" onclick="update_big(this)">
+                    <img src="assets/maria.webp" alt="2" onclick="update_big(this)" loading="lazy">
+                    <img src="assets/bun.webp" alt="3" onclick="update_big(this)" loading="lazy">
                 </div>
             </div>
         </div>

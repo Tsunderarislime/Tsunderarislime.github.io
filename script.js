@@ -1,7 +1,7 @@
 var dict = {
-    "1": ["assets/atsui-yo.png", "https://github.com/Tsunderarislime/atsui-yo", "atsui-yo", "This is my first Discord bot I developed, using Python and discord.py. It is a weather forecast bot which can provide a 12-hour forecast, 1-7 day forecast, as well as provide automated daily weather forecasts. <br><br> Daily forecasts also come with a fun video depending on the highest temperature for that day. All of the functionality can be configured purely through using chat commands in a Discord channel."],
-    "2": ["assets/maria.png", "#", "Maria", "This is a placeholder (1)"],
-    "3": ["assets/bun.png", "#", "Bunny", "This is a placeholder (2)"]
+    "1": ["assets/atsui-yo.webp", "https://github.com/Tsunderarislime/atsui-yo", "atsui-yo", "This is my first Discord bot I developed, using Python and discord.py. It is a weather forecast bot which can provide a 12-hour forecast, 1-7 day forecast, as well as provide automated daily weather forecasts. <br><br> Daily forecasts also come with a fun video depending on the highest temperature for that day. All of the functionality can be configured purely through using chat commands in a Discord channel."],
+    "2": ["assets/maria.webp", "#", "Maria", "This is a placeholder (1)"],
+    "3": ["assets/bun.webp", "#", "Bunny", "This is a placeholder (2)"]
 };
 
 function update_big(imgs) {
