@@ -99,6 +99,16 @@ body {
     text-shadow: 1px 1px 2px black;
 }
 
+#big-description > a {
+    text-decoration: none;
+    color: lightcyan;
+    text-shadow: 1px 1px 2px black;
+}
+
+#big-description > a:hover {
+    color: white;
+}
+
 #controls {
     display: block;
     max-width: 100%;
@@ -184,6 +194,7 @@ footer {
 
 .footer-text {
     display: inline;
+    text-shadow: 1px 1px 2px black;
 }
 
 footer > a {
