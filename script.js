@@ -23,9 +23,13 @@ async function update_big(imgs) {
     // Get the array for the image clicked in the control bar
     var items = dict[imgs.alt];
 
-    // Fade out
+    // Remove the pulsing glow effect on the previous big image (has ID of 'control-big-image')
+    document.getElementById("control-big-image").removeAttribute("id");
+
+    // Fade out and add pulsing glow to currently clicked element
     big_image_container.classList.toggle("fade");
     big_text.classList.toggle("fade");
+    imgs.id = "control-big-image"
 
     // Update the elements just as they completely fade out
     setTimeout(function() {

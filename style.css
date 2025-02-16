@@ -127,10 +127,13 @@ body {
     cursor: pointer;
 }
 
-#controls img:hover {
-    filter: brightness(115%);
+#control-big-image {
+    animation: pulse 2s infinite;
 }
 
+@keyframes pulse {
+    50% {filter: brightness(120%);}
+}
 
 /* Handle desktop web browsers */
 @media only screen and (orientation: landscape) {
