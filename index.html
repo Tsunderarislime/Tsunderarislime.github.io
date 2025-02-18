@@ -17,9 +17,33 @@
         <script src="script.js" async fetchpriority="low"></script>
     </head>
     <body>
-        <h1 id="title">
-            KYLE MUI
+        <!-- Title + modal button -->
+        <h1 id="title" onclick="show_modal()">
+            | <u>KYLE MUI</u> |
         </h1>
+
+        <!-- The Modal -->
+        <div id="the-modal" class="modal">
+            <div class="modal-content">
+                <h2>LINKS</h2>
+                <table>
+                    <tr class="modal-flex">
+                        <td>
+                            <div class="hoverlay">
+                                <a title="My GitHub profile" href="https://github.com/Tsunderarislime"><img class="modal-item" src="assets/github.webp" alt="GitHub Logo" loading="lazy"></a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="modal-flex">
+                        <td>
+                            <div class="hoverlay">
+                                <a title="My LinkedIn profile" href="https://www.linkedin.com/in/kyle-mui-1907252b0/"><img class="modal-item" src="assets/linkedin.webp" alt="LinkedIn Logo" loading="lazy"></a>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
 
         <div class="horizontal-line"></div>
         <!-- Main content goes inside this div -->
@@ -31,7 +55,7 @@
                     </a>
                 </div>
                 <div id="big-text">
-                    <h2 id="big-title">
+                    <h2 id="big-title" style="text-decoration: underline;">
                         atsui-yo
                     </h2>
                     <p id="big-description">
@@ -49,10 +73,7 @@
     </body>
     <footer>
         <p class="footer-text" style="color: skyblue;">
-            Click on the big image to go to that project's page. Or, check out my
+            Click on the big image to go to that project's page. Click my name for a list of my links.
         </p>
-        <a class="footer-text" href="https://github.com/Tsunderarislime">
-            Github
-        </a>
     </footer>
 </html>

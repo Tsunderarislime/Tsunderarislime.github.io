@@ -1,9 +1,26 @@
+// Dictionary for controlling the big image with the small images in the control bar
 var dict = {
     "1": ["assets/atsui-yo.webp", "https://github.com/Tsunderarislime/atsui-yo", "atsui-yo", "This is my first Discord bot I developed, using Python and discord.py. It is a weather forecast bot which can provide a 12-hour forecast, 1-7 day forecast, as well as provide automated daily weather forecasts. <br><br> Daily forecasts also come with a fun video depending on the highest temperature for that day. All of the functionality can be configured purely through using chat commands in a Discord channel."],
     "2": ["assets/yuuka.webp", "https://github.com/Tsunderarislime/yuuka", "yuuka", "This is a Discord bot which is a proof of concept for a highly configurable, automated moderation tool. Its main goal is to automatically identify and ban scam advertisement messages. <br><br> A fully realized implementation of yuuka can be found in SFU Anime's own Discord bot, <a href='https://github.com/SFUAnime/Ren'>Ren.</a> Here, yuuka was implemented as a cog called <a href='https://github.com/SFUAnime/Ren/tree/V3/testing/cogs/gatekeep'>\"Gatekeep\".</a> This cog implementation expands upon the functionality and customizablity of yuuka. If your server uses the Red Discord Bot or any fork of it, then you can try my cog out by installing <a href='https://github.com/SFUAnime/lui-cogs-v3'>lui-cogs.</a>"],
     "3": ["assets/bun.webp", "#", "Bunny", "This is a placeholder"]
 };
 
+var m = document.getElementById("the-modal");
+
+// Activate the modal
+async function show_modal() {
+    var m = document.getElementById("the-modal");
+    m.style.display = "block";
+};
+
+// Deactivate the modal
+window.onclick = function(event) {
+    if (event.target == m) {
+        m.style.display = "none";
+    };
+};
+
+// Update the display of the large image when the small image in the control bar is clicked
 async function update_big(imgs) {
     // Get IDs of image in the big display
     var big_image = document.getElementById("big-image");
