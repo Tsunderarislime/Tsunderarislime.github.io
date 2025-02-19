@@ -27,7 +27,7 @@ body {
 }
 
 @keyframes rainbow {
-    from {
+    0% {
         color: rgb(255, 0, 0);
     }
     20% {
@@ -57,18 +57,30 @@ body {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.6);
     backdrop-filter: blur(3px);
     animation: blur-in 200ms ease-out 0ms;
 }
 
 @keyframes blur-in {
-    from{
+    0% {
+        background-color: rgba(0,0,0,0);
         backdrop-filter: blur(0px);
     }
     100% {
+        background-color: rgba(0,0,0,0.6);
         backdrop-filter: blur(3px);
+    }
+}
+
+@keyframes blur-out {
+    0% {
+        background-color: rgba(0,0,0,0.6);
+        backdrop-filter: blur(3px);
+    }
+    100% {
+        background-color: rgba(0,0,0,0);
+        backdrop-filter: blur(0px);
     }
 }
 
@@ -85,17 +97,30 @@ body {
     box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(6px);
     width: 75%; /* Could be more or less, depending on screen size */
-    animation: slide 200ms ease-out 0ms;
+    max-height: 80%;
+    overflow: scroll;
+    animation: slide-in 200ms ease-out 0ms;
 }
 
-@keyframes slide {
-    from {
-        top: -25%;
+@keyframes slide-in {
+    0% {
+        translate: 0% -20%;
         opacity: 0;
     }
     100% {
-        top: 0%;
+        translate: 0% 0%;
         opacity: 1;
+    }
+}
+
+@keyframes slide-out {
+    0% {
+        translate: 0% 0%;
+        opacity: 1;
+    }
+    100% {
+        translate: 0% -20%;
+        opacity: 0;
     }
 }
 
@@ -153,6 +178,7 @@ body {
     aspect-ratio: 9/16;
     backdrop-filter: blur(5px) brightness(80%);
     border-radius: 5px;
+    padding: 1%;
 }
 
 #big-display {
@@ -200,14 +226,14 @@ body {
 #big-title {
     text-align: center;
     color: lightskyblue;
-    font-size: 4vh;
+    font-size: 3.5vh;
     display: block;
     margin: auto;
     text-shadow: 2px 2px 2px black;
 }
 
 #big-description {
-    font-size: 1.4vh;
+    font-size: 1.5vh;
     color: lightskyblue;
     text-shadow: 1px 1px 2px black;
 }
@@ -227,7 +253,7 @@ body {
     max-width: 100%;
     height: 21%;
     padding: 0.5%;
-    padding-top: 1%;
+    padding-top: 2%;
     border-top: 0.25vh rgba(192, 192, 192, 0.5) solid;
     white-space: nowrap;
     overflow-x: auto;
@@ -266,7 +292,7 @@ footer {
 .footer-text {
     display: inline;
     text-shadow: 1px 1px 2px black;
-    font-size: 1.4vh;
+    font-size: 1.25vh;
 }
 
 /* Handle desktop web browsers */
@@ -275,12 +301,14 @@ footer {
         font-size: 8vw;
     }
 
+    /* Adjust modal for landscape, logos are placed horizontally instead of vertically */
     .modal-content {
-    background-color: rgba(64, 64, 64, 0.8);
-    margin: 7.5% auto; /* 7.55% from the top and centered */
-    padding: 1%;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+        background-color: rgba(64, 64, 64, 0.8);
+        margin: 7.5% auto; /* 7.55% from the top and centered */
+        padding: 1%;
+        border: 1px solid #888;
+        width: 85%; /* Could be more or less, depending on screen size */
+        max-height: 65%;
     }
 
     .modal-content h2 {
@@ -302,6 +330,7 @@ footer {
         aspect-ratio: 23/9;
     }
 
+    /* Image on left, description upper right, controls lower right */
     #big-display {
         max-height: 100%;
         max-width: 100%;
@@ -333,6 +362,7 @@ footer {
         float: right;
         width: 58.5%;
         height: 25%;
+        padding-top: 1%;
     }
 
     .footer-text {
