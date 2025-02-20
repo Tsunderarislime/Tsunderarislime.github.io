@@ -1,10 +1,6 @@
 /* Universal base font */
-@font-face {
-    font-family: "Liter", serif;
-    src: url("assets/Liter-Regular.ttf");
-}
-
 * {
+    font-family: "Liter", serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
