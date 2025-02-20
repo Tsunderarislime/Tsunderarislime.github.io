@@ -286,7 +286,7 @@ body {
 /* Footer section */
 footer {
     text-align: center;
-    padding: 1%;
+    padding: 1% 1% 5%;
 }
 
 .footer-text {
@@ -298,7 +298,7 @@ footer {
 /* Handle desktop web browsers */
 @media only screen and (orientation: landscape) {
     #title {
-        font-size: 8vw;
+        font-size: 7vw;
     }
 
     /* Adjust modal for landscape, logos are placed horizontally instead of vertically */
@@ -314,7 +314,7 @@ footer {
     .modal-content h2 {
         text-align: center;
         color: lightskyblue;
-        font-size: 5vw;
+        font-size: 4.5vw;
     }
 
     .modal-flex {
@@ -351,7 +351,7 @@ footer {
     #big-title {
         text-align: center;
         color: lightskyblue;
-        font-size: 4vw;
+        font-size: 3.5vw;
     }
 
     #big-description {
@@ -365,7 +365,11 @@ footer {
         padding-top: 1%;
     }
 
+    footer {
+        padding-bottom: 1%;
+    }
+
     .footer-text {
-        font-size: 1.25vw;
+        font-size: 1.5vw;
     }
 }
