@@ -16,5 +16,6 @@ var dict = {
     to provide a nice graphical interface to run the algorithm.`],
     "4": ["assets/artist-index.webp", "https://artist-index.up.railway.app/", "Artist Index", `This is a Flask web application that hosts a database of artists 
         I follow on various social media websites.<br><br>Operations like adding, removing, or editing entries can all be done through a custom user interface I built. 
-        For artists with Twitter accounts, there's additional functionality like fetching profile pictures and an embedded timeline.`]
+        The index also supports uploads or direct links for showcasing some art that an artist has made. An instance of the index is currently live and can be visited by 
+        clicking on the the project's image.`]
 };
