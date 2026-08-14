@@ -1,82 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Tsunderarislime</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Liter&display=swap" rel="stylesheet">
-
-        <!-- Links to local files -->
-        <link rel="preload" as="image" href="assets/atsui-yo.webp">
-        <link rel="preload" href="style.css" as="style">
-        <link rel="stylesheet" href="style.css">
-        <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
-        <script src="dict.js" async fetchpriority="high"></script>
-        <script src="script.js" async fetchpriority="low"></script>
-    </head>
-    <body>
-        <!-- Title + modal button -->
-        <h1 title="Click to show links" id="title" onclick="show_modal()">
-            | <u>KYLE MUI</u> |
-        </h1>
-
-        <!-- The Modal -->
-        <div id="the-modal" class="modal">
-            <div id="the-modal-content" class="modal-content">
-                <h2>LINKS</h2>
-                <table>
-                    <tr class="modal-flex">
-                        <td>
-                            <div class="hoverlay">
-                                <a title="My GitHub profile" href="https://github.com/Tsunderarislime"><img class="modal-item" src="assets/github.webp" alt="GitHub Logo" loading="lazy"></a>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="modal-flex">
-                        <td>
-                            <div class="hoverlay">
-                                <a title="My LinkedIn profile" href="https://www.linkedin.com/in/kyle-mui-1907252b0/"><img class="modal-item" src="assets/linkedin.webp" alt="LinkedIn Logo" loading="lazy"></a>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-
-        <div class="horizontal-line"></div>
-        <!-- Main content goes inside this div -->
-        <div id="main-content">
-            <div id="big-display">
+---
+layout: default
+title: Home
+unique_css: index.css
+unique_js: index.js
+footer_text: "Click on the big image to go to that project's page. Click on my name for a list of links."
+---
+<div class="horizontal-line"></div>
+<!-- Main content goes inside this div -->
+<div id="main-content">
+    <div id="big-display">
+        {% for item in site.data.index reversed %}
+            {% assign data = item[1] %}
+            {% if forloop.first %}
                 <div id="big-image-container">
-                    <a title="Go to this project's page" id="big-link" href="https://github.com/Tsunderarislime/atsui-yo">
-                        <img id="big-image" src="assets/artist-index.webp" alt="4" fetchpriority="high">
+                    <a title="Go to this project's page" id="big-link" href="{{ data.link }}">
+                        <img id="big-image" src="{{ data.image }}" alt="{{ item[0] }}" fetchpriority="high">
                     </a>
                 </div>
                 <div id="big-text">
                     <h2 id="big-title" style="text-decoration: underline;">
-                        Artist Index
+                        {{ data.title }}
                     </h2>
                     <p id="big-description">
-                        This is a Flask web application that hosts a database of artists I follow on various social media websites.<br><br>
-                        Operations like adding, removing, or editing entries can all be done through a custom user interface I built. 
-                        The index also supports uploads or direct links for showcasing some art that an artist has made. An instance of the index is currently live 
-                        and can be visited by clicking on the the project's image.
+                        {{ data.description }}
                     </p>
                 </div>
                 <div id="controls">
-                    <img id="control-big-image" src="assets/artist-index.webp" alt="4" onclick="update_big(this)">
-                    <img src="assets/perona-malik.webp" alt="3" onclick="update_big(this)" loading="lazy">
-                    <img src="assets/yuuka.webp" alt="2" onclick="update_big(this)" loading="lazy">
-                    <img src="assets/atsui-yo.webp" alt="1" onclick="update_big(this)" loading="lazy">
+                    <img id="control-big-image" src="{{ data.image }}" alt="{{ item[0] }}" onclick="update_big(this)">
+            {% else %}
+                    <img src="{{ data.image }}" alt="{{ item[0] }}" onclick="update_big(this)" loading="lazy">
+            {% endif %}
+        {% endfor %}
                 </div>
-            </div>
-        </div>
-        <div class="horizontal-line"></div>
-    </body>
-    <footer>
-        <p class="footer-text" style="color: skyblue;">
-            Click on the big image to go to that project's page. Click my name for a list of my links.
-        </p>
-    </footer>
-</html>
+    </div>
+</div>
+<div class="horizontal-line"></div>

@@ -1,0 +1,124 @@
+#main-content {
+    max-width: 95%;
+    height: auto;
+    margin: auto;
+    backdrop-filter: blur(5px) brightness(80%);
+    border-radius: 5px;
+    padding: 1%;
+}
+
+#project-title {
+    text-align: center;
+    color: lightskyblue;
+    font-size: 12vw;
+    display: block;
+    margin: auto;
+    text-shadow: 4px 4px 2px black;
+}
+
+#project-main-image {
+    max-width: 90%;
+    height: auto;
+    display: block;
+    margin:auto;
+    box-shadow: 4px 4px 2px black;
+    margin-bottom: 1%;
+}
+
+h3 {
+    color: lightskyblue;
+    font-size: 8vw;
+    text-shadow: 3px 3px 2px black;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+p {
+    color: lightskyblue;
+    font-size: 4vw;
+    text-shadow: 2px 2px 2px black;
+    margin-top: 0.25%;
+    margin-bottom: 0.25%;
+}
+
+a {
+    text-decoration: none;
+    color: lightcyan;
+}
+
+a:hover {
+    color: white;
+}
+
+/* Set up gallery grid, 2 columns for desktop and 1 column for mobile */
+#gallery-container {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 4px;
+}
+
+.column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+    padding: 0 2%;
+}
+
+.gallery-image {
+    margin-bottom: 5%;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.gallery-image img {
+    width: 100%;
+    max-height: auto;
+    display: block;
+    box-shadow: 3px 3px 2px black;
+}
+
+.gallery-image p {
+    color: lightskyblue;
+    font-size: 3.5vw;
+    margin-top: 0.15%;
+    margin-bottom: 0.1%;
+    display: block;
+    text-wrap: pretty;
+    text-align: center;
+}
+
+#return-to-main-page {
+    text-align: center;
+}
+
+/* Handle desktop web browsers */
+@media only screen and (orientation: landscape) {
+    #project-title {
+        font-size: 5vw;
+    }
+
+    #project-main-image {
+        max-width: 60%;
+    }
+
+    h3 {
+        font-size: 3vw;
+    }
+
+    p {
+        font-size: 1.25vw;
+    }
+
+    .column {
+        -ms-flex: 45%; /* IE10 */
+        flex: 45%;
+        max-width: 45%;
+    }
+
+    .gallery-image p {
+        font-size: 1.1vw;
+    }
+}

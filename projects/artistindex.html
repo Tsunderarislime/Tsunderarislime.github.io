@@ -1,0 +1,54 @@
+---
+layout: default
+title: Home
+unique_css: project.css
+unique_js: index.js
+footer_text: ""
+---
+<div class="horizontal-line"></div>
+<!-- Main content goes inside this div -->
+<div id="main-content">
+    <h1 id="project-title">{{ site.data.index.artistindex.title }}</h1>
+    <img id="project-main-image" src="{{ site.data.index.artistindex.image }}"/>
+    <hr>
+
+    <h3>About This Project</h3>
+    <p>The Artist Index is a web application for hosting a database of artists that I follow on a variety of social media platforms. Think Twitter, Bluesky, and Pixiv just 
+        to name a few. It uses Flask and SQLite for the backend and HTML, CSS, and JavaScript for the frontend. <br><br>I'll keep this brief since I currently host an instance of 
+        the Artist Index, which has its own 'About' page. You can visit the Artist Index <a href="https://artist-index.up.railway.app/">here</a>. You can also find a link 
+        to the GitHub repository in the 'About' page, if you are interested in viewing the source code.
+    </p>
+    <hr>
+
+    <h3>Gallery</h3>
+    <div id="gallery-container">
+        <div class="column">
+            <div class="gallery-image">
+                <img src="/assets/images/artist-index/gallery-1.webp" />
+                <p>Here is the main index view, using a desktop browser. I used <a href="https://datatables.net/">DataTables</a> for the pagination and search functionality.</p>
+            </div>
+            <div class="gallery-image">
+                <img src="/assets/images/artist-index/gallery-2.webp" />
+                <p>The interface for signing in. A lot of database operations require an authenticated user to perform.</p>
+            </div>
+            <div class="gallery-image">
+                <img src="/assets/images/artist-index/gallery-3.webp" />
+                <p>The interface for adding an artist with some dummy information.</p>
+            </div>
+            <div class="gallery-image">
+                <img src="/assets/images/artist-index/gallery-4.webp" />
+                <p>A modal for uploading artwork straight to the server's storage, or I can provide a direct link to the artwork on an image host.</p>
+            </div>
+        </div>
+        <div class="column">
+            <div class="gallery-image">
+                <img src="/assets/images/artist-index/gallery-5.webp" />
+                <p>Viewing an artist's page. This time I'm using a mobile browser to view.</p>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <h3 id="return-to-main-page"><a href="/">Return to Main Page</a></h3>
+</div>
+
+<div class="horizontal-line"></div>
