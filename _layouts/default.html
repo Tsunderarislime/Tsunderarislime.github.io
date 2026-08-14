@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{{ page.title }}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Liter&display=swap" rel="stylesheet">
+
+        <!-- Links to local files -->
+        <link rel="preload" href="/assets/css/default.css" as="style">
+        <link rel="stylesheet" href="/assets/css/default.css">
+        {% if page.unique_css %}
+            <link rel="preload" href="/assets/css/{{ page.unique_css }}" as="style">
+            <link rel="stylesheet" href="/assets/css/{{ page.unique_css }}">
+        {% endif %}
+        <link rel="icon" type="image/x-icon" href="{{ '/assets/images/favicon.ico' | relative_url }}">
+        <script src="/assets/js/links.js" async fetchpriority="low"></script>
+        {% if page.unique_js %}
+            <script src="/assets/js/{{ page.unique_js }}" async fetchpriority="low"></script>
+        {% endif %}
+    </head>
+    <body>
+        {% include links.html %}
+        {{ content }}
+    </body>
+    <footer>
+        <p class="footer-text" style="color: skyblue;">
+            {{ page.footer_text }}
+        </p>
+    </footer>
+</html>

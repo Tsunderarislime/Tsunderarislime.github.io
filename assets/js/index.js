@@ -1,26 +1,6 @@
-var m = document.getElementById("the-modal");
-var mc = document.getElementById("the-modal-content");
-
-// Activate the modal
-async function show_modal() {
-    m.style.display = "block";
-};
-
-// Deactivate the modal
-window.onclick = function(event) {
-    if (event.target == m) {
-        // Apply and play the animation for clicking off the modal
-        m.style.animation = "blur-out 200ms ease-out 0ms";
-        mc.style.animation = "slide-out 200ms ease-out 0ms";
-
-        // Completely hide modal, reset animations
-        setTimeout(function() {
-            m.style.display = "none";
-            m.style.animation = "blur-in 200ms ease-out 0ms";
-            mc.style.animation = "slide-in 200ms ease-out 0ms";
-        }, 150);
-    };
-};
+---
+---
+var dict = {{ site.data.index | jsonify }};
 
 // Update the display of the large image when the small image in the control bar is clicked
 async function update_big(imgs) {
@@ -48,15 +28,15 @@ async function update_big(imgs) {
     // Fade out and add pulsing glow to currently clicked element
     big_image_container.classList.toggle("fade");
     big_text.classList.toggle("fade");
-    imgs.id = "control-big-image"
+    imgs.id = "control-big-image";
 
     // Update the elements just as they completely fade out
     setTimeout(function() {
         big_image.alt = imgs.alt;
-        big_image.src = items[0];
-        big_link.href = items[1];
-        big_title.innerHTML = items[2];
-        big_desc.innerHTML = items[3];
+        big_image.src = items.image;
+        big_link.href = items.link;
+        big_title.innerHTML = items.title;
+        big_desc.innerHTML = items.description;
         // Fade in
         big_image_container.classList.toggle("fade");
         big_text.classList.toggle("fade");
