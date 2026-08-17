@@ -13,17 +13,54 @@ footer_text: ""
     <hr>
 
     <h3>About This Project</h3>
-    <p>Under construction, will be completed soon!
+    <p>This is a Python port of my Perona-Malik edge enhancement script. My original script was written in MATLAB and was used for an academic project in 
+        <a href="https://www.sfu.ca/students/calendar/2025/spring/courses/macm/416.html">MACM 416</a>. The project was mainly about analyzing the properties 
+        of the time-stepping and spatial derivative schemes used by the Perona-Malik edge enhancement algorithm. <br><br>
+        I made this Python port because I thought the algorithm was very interesting in how it visually affected images, but also because I really enjoyed 
+        analyzing the mathematic equations behind the Perona-Malik edge enhancement algorithm. I wanted my code to be easily shared, but since MATLAB requires 
+        an annual subscription to use, I decided to rewrite my code in Python. <br><br>
+        This project was a valuable learning experience in Python, as I implemented several optimizations in the Python scripts that weren't present my 
+        original MATLAB scripts. <br><br>One major time save was utilizing parallel processes to speed up each iteration of the algorithm. The algorithm needs to be run 
+        on each colour channel of the image, but the colour channels do not interact with each other within each iteration. Therefore, I can process each colour 
+        channel in parallel, rather than in sequence. This reduced the algorithm runtime down to 33% of the sequential runtime. <br><br>Another big time save was making 
+        use of convolutions to process colour channels, rather than nested for loops. When processing a colour channel, the algorithm needs to view each pixel intensity and 
+        perform calculations based on its neighboring pixel intensities. The original MATLAB code just used for loops since the project wasn't being graded on efficiency, rather it 
+        was more focused on the analysis of the algorithm. However, nested for loops aren't very efficient and convolutions are a great way to run calculations with 
+        neighboring values. This was a smaller optimization, though it still made a significant difference in runtime. <br><br>
+        You can visit the project' GitHub repository <a href="https://github.com/Tsunderarislime/perona-malik-edge-enhancement">here</a> and try running the Perona-Malik 
+        algorithm yourself.
     </p>
     <hr>
 
     <h3>Gallery</h3>
     <div id="gallery-container">
         <div class="column">
+            <div class="gallery-image">
+                <img src="/assets/images/perona-malik/gallery-1.webp" />
+                <p>1. Original image before processing.</p>
+                <p>2. Relatively normal parameters set.</p>
+                <p>3. Time-step parameter set outside the stable range.</p>
+                <p>4. Edge threshold parameter set extremely high.</p>
+            </div>
         </div>
         <div class="column">
+            <div class="gallery-image">
+                <video controls>
+                    <source src="/assets/images/perona-malik/gallery-2.mp4" />
+                </video>
+                <p>Video showcase of the image getting corrupted with an unstable time-step parameter.</p>
+            </div>
         </div>
     </div>
+    <hr>
+    <h3>Further Reading</h3>
+    <p>- You can read my analysis of the Perona-Malik algorithm <a href="https://github.com/Tsunderarislime/perona-malik-edge-enhancement/wiki">here</a>. 
+        I'm particularly proud of my stability analysis, as I was stumped for a bit at first when figuring out the region of stability. I took a 
+        geometric approach to illustrate the region and it turned out to work beautifully for showing that region of stability.
+    </p><br>
+    <p>- You can read the paper by P.Perona and J.Malik <a href="https://ieeexplore.ieee.org/document/56205">here</a>. This paper covers the algorithm 
+        much more in-depth.
+    </p>
     <hr>
     <h3 id="return-to-main-page"><a href="/">Return to Main Page</a></h3>
 </div>

@@ -9,7 +9,7 @@
 /* General CSS, design for mobile first */
 body {
     background-image: url(/assets/images/pl-tile.jpg);
-    backdrop-filter: blur(2px) brightness(80%);
+    backdrop-filter: blur(3px) brightness(50%);
     padding: 1%;
     margin: 0%;
 }
