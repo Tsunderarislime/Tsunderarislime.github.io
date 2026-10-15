@@ -12,15 +12,62 @@ footer_text: ""
     <hr>
 
     <h3>About This Project</h3>
-    <p>Under construction, will be completed soon!
+    <p>This was my first time making a Discord bot. In 2023, I did my co-op job as a research assistant and I did a bunch of work with writing Python scripts. A lot of my 
+        scripts interacted with libraries and APIs revolving around historical weather datasets. I also worked a lot with geodata, as the project I was working on during my 
+        co-op aimed to model solar and wind power generation for the province of British Columbia. From working with these libraries and datasets, I got inspired to make 
+        a Discord bot that would generate live weather forecasts with API calls.<br><br>
+        It was a great learning experience for me, since I was still studying in university at the time. For the 12-hour forecasts used in the daily forecast and the "current" 
+        command, I initially wanted to use the "Matplotlib" library to generate plot images that the bot would send. However, I noticed that if I called several forecasts with 
+        this method, the Python process for the Discord bot would slowly start using more and more RAM. After noticing this, I decided that I needed another approach for displaying 
+        forecast data.<br><br>
+        That's where I came up with the idea to use square emojis to build a simple, but colourful bar graph. I came up with a very clever solution to implement this, where I 
+        had a map of bars that represented heights 1-12. Of course it wasn't feasible to store these as vertically arranged emoji, so I stored the bars as horizontal rows. Then, 
+        when I needed to build the grid of emojis, I just rotate my bars 90 degrees to get the correct orientation. I was and still am very proud of that cool trick to this day.<br><br>
+        Next part was figuring out how to actually get weather data and geolocation. This part was the most difficult, as many weather APIs require a registered account to use. 
+        I eventually stumbled upon <a href="https://open-meteo.com/">Open-Meteo</a>, which did not require any sign ups and had the weather information that I wanted. The 
+        Open-Meteo API returned weather data that was reasonable to use for my Discord bot. After that, I also wanted to display the City name of the weather report. I had plans 
+        to head to Japan later in 2023, so I thought it would be very cool if my bot showed that my weather reports were for "Japan". I found 
+        <a href="https://nominatim.org/">Nominatim</a>, which was an API that let me perform reverse geocoding with latitude and longitude values. This was perfect because I 
+        already had latitude and longitude values from the Open-Meteo API. So I could easily feed those into Nominatim and get the location of the weather forecasts.<br><br>
+        Once I got the bot complete, I needed a way to host it. I didn't have a spare computer at home lying around to use for a self-hosted Discord bot. I ended up using 
+        <a href="https://aws.amazon.com/ec2/">AWS EC2</a>, since it met all my needs. Since this project was more of a learning experience and done for fun, I was fine with 
+        using my one year AWS free trial to host the Discord bot for a year. From July 2023 to July 2024, I had an instance of Atsui Yo running. Despite being my first bot, I 
+        did a really good job with how robust and simple it was. It never missed a daily weather report for all 365 days of my AWS free trial.<br><br>
+        You can view the project's GitHub repository <a href="https://github.com/Tsunderarislime/atsui-yo">here.</a> There's also a pretty extensive Wiki that has instructions 
+        if you want to try hosting my Discord bot on your own server.
     </p>
     <hr>
 
     <h3>Gallery</h3>
     <div id="gallery-container">
         <div class="column">
+            <div class="gallery-image">
+                <img src="/assets/images/atsui-yo/gallery-1.webp" />
+                <p>Example of a daily weather forecast. I had the bot report the daily forecast at 10:00AM every day for 365 days.</p>
+            </div>
+            <div class="gallery-image">
+                <img src="/assets/images/atsui-yo/gallery-5.webp" />
+                <p>Requesting the current weather during my Japan trip. The Nominatim API might've been a bit too accurate, as I was staying in Bunkyō, which is one of the 
+                    special wards of Tokyo. Note that while I took these screenshots on a device using Pacific Standard Time, the embed correctly shows that I requested the 
+                    current weather at 11:48 in Japan.
+                </p>
+            </div>         
         </div>
         <div class="column">
+            <div class="gallery-image">
+                <img src="/assets/images/atsui-yo/gallery-2.webp" />
+                <p>Here, I request the current weather at night. You can see the at the top how the conditions like "cloudy" are shown, as well as the use of
+                    moon and sun emojis that correspond to the time of day.
+                </p>
+            </div>
+            <div class="gallery-image">
+                <img src="/assets/images/atsui-yo/gallery-3.webp" />
+                <p>I call for a 5-day forecast here. This command supports a range of 1-7 days.</p>
+            </div>
+            <div class="gallery-image">
+                <img src="/assets/images/atsui-yo/gallery-4.webp" />
+                <p>Displaying the help command menu. Commands that take additional parameters like "config" will show help dialog when used without any parameters.</p>
+            </div>   
         </div>
     </div>
     <hr>
