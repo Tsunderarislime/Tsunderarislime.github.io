@@ -1,8 +1,7 @@
 ---
 layout: default
-title: Home
+title: Yuuka
 unique_css: project.css
-unique_js: index.js
 footer_text: ""
 ---
 <div class="horizontal-line"></div>
@@ -13,15 +12,56 @@ footer_text: ""
     <hr>
 
     <h3>About This Project</h3>
-    <p>Under construction, will be completed soon!
+    <p>Starting roughly late 2024, several Discord servers that I was active in were starting to see an influx of bot activity. Not bots as in dedicated Discord bots that help 
+        manage the servers. No, these were scam bots that wanted to give away "free" items like concert tickets, an older MacBook, a PS5, or a Canon camera, just to name a few 
+        examples.<br><br>
+        I noticed that many of these scam bots sent messages that were very similar to each other. Phrases such as "DM if interested" frequently popped up, as well as several 
+        other words that were shared among these scam messages. Since I had experience with creating Discord bots, I made Yuuka to specifically flag these scam messages and 
+        take appropriate actions. I used a combination of several simple heuristics for Yuuka, allowing for a highly configurable message filter which 
+        could be tuned to flag the scam messages.<br><br>
+        The first heuristic was a weighted message score, where Yuuka would have a database of flagged words and their respective weights. When a message is sent, Yuuka reads 
+        each word in the message and adds the weight of the word to a cumulative message score, if the flagged word appears in the message. This allows for fine-tuning of the 
+        filter as words that people don't use frequently, such as "MacBook" could be given higher weights. While more widely used words such as "first", could be given 
+        less weight. In a later iteration, image attachments could also be given weights since the scam messages frequently had at least 3 images attached.<br><br>
+        The second heuristic was flagging accounts that recently joined the server. This heuristic targets bot behaviour, as they commonly would send their scam message within 
+        2-3 days of joining the server. From this common behaviour, Yuuka can be configured to only check messages from accounts that joined the server within a user-defined 
+        number of days, say 5 days for example. This greatly saves on compute power, since it would be very costly to check messages from every server member. Users who have 
+        been in the server for over a year are probably not going to be a bot. Of course, this approach isn't perfect because it does not filter messages from old server members 
+        who lose their accounts to phishing attacks. However, those cases are far more rare and in many cases, the user recovers their compromised accounts shortly after.<br><br>
+        The third heuristic targets only the very first message that an account sends in the server. This was another known bot behaviour, since their scam message is frequently 
+        the first (and only) message they send in the server. This was another heuristic for saving compute power, as there was no point checking messages from active members of 
+        a server. If an account sends their first message and it wasn't flagged, then they are automatically cleared from all future message checks.<br><br>
+        While Yuuka the Discord bot isn't actively being used, I did implement all of her functionality into a module for SFU Anime Club's own Discord bot, 
+        <a href='https://github.com/SFUAnime/Ren'>Ren.</a> As a module for Ren, Yuuka has been renamed as the 'Gatekeep' module. The SFU Anime Club Discord was one of the 
+        aforementioned servers that I was active in, so it was very cool to see my work come into fruition. As of the Gatekeep module being active since February 2025, it has 
+        successfully banned over 100 scam bot accounts as of October 2026. Thankfully, no false positives have occurred yet. A major factor for my choice in heuristics was 
+        to minimize the possibility of accidently banning a human account.<br><br>
+        You can visit Yuuka's GitHub repository <a href="https://github.com/Tsunderarislime/yuuka">here</a>. For the currently active Ren module, you can view it 
+        <a href="https://github.com/SFUAnime/lui-cogs-v3">here</a>, under the 'gatekeep' folder.
     </p>
     <hr>
 
     <h3>Gallery</h3>
     <div id="gallery-container">
         <div class="column">
+            <div class="gallery-image">
+                <img src="/assets/images/yuuka/gallery-1.webp" />
+                <p>Gatekeep status for Ren from October 2026.</p>
+            </div>
+            <div class="gallery-image">
+                <img src="/assets/images/yuuka/gallery-2.webp" />
+                <p>Example of a message getting flagged, which also had 3 attachments.</p>
+            </div>
+            <div class="gallery-image">
+                <img src="/assets/images/yuuka/gallery-3.webp" />
+                <p>Example of a very long message getting flagged, showcasing the message truncation feature to reduce clutter in the report channel.</p>
+            </div>                        
         </div>
         <div class="column">
+            <div class="gallery-image">
+                <img src="/assets/images/yuuka/gallery-4.webp" />
+                <p>An example of the flagged word list along with their weights.</p>
+            </div>
         </div>
     </div>
     <hr>
