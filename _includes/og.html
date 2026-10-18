@@ -11,3 +11,7 @@
 {% if page.og_description %}
     <meta property="og:description" content="{{ page.og_description }}" />
 {% endif %}
+
+{% if page.og_large_image %}
+    <meta name="twitter:card" content="summary_large_image">
+{% endif %}
