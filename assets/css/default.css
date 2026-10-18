@@ -160,6 +160,22 @@ body {
     aspect-ratio: 1;
 }
 
+/* Link in modal that returns to the home page */
+#modal-home {
+    padding-top: 0.25%;
+    padding-bottom: 0.25%;
+    text-align: center;
+}
+
+#modal-home a {
+    text-decoration: none;
+    color: lightcyan;
+}
+
+#modal-home a:hover {
+    color: white;
+}
+
 /* Horizontal line to separate main content from title and footer*/
 .horizontal-line {
     max-width: 97.5%;

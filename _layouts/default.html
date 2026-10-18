@@ -19,6 +19,9 @@
         {% if page.unique_js %}
             <script src="/assets/js/{{ page.unique_js }}" async fetchpriority="low"></script>
         {% endif %}
+
+        <!-- Metadata for making the Open Graph embed object -->
+        {% include og.html %}
     </head>
     <body>
         {% include links.html %}

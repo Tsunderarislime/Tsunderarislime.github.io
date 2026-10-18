@@ -2,7 +2,15 @@
 layout: default
 title: Yuuka
 unique_css: project.css
-footer_text: ""
+footer_text: 
+
+og_title: Yuuka
+og_type: article
+og_url: https://tsunderarislime.github.io/projects/yuuka.html
+og_image: http://tsunderarislime.github.io/assets/images/yuuka.webp
+og_image_width: 800
+og_image_height: 800
+og_description: This is a Discord bot that acts a highly configurable, automated moderation tool. Its main goal was to automatically identify and ban scam advertisement messages.
 ---
 <div class="horizontal-line"></div>
 <!-- Main content goes inside this div -->
@@ -17,7 +25,7 @@ footer_text: ""
         examples.<br><br>
         I noticed that many of these scam bots sent messages that were very similar to each other. Phrases such as "DM if interested" frequently popped up, as well as several 
         other words that were shared among these scam messages. Since I had experience with creating Discord bots, I made Yuuka to specifically flag these scam messages and 
-        take appropriate actions. I used a combination of several simple heuristics for Yuuka, allowing for a highly configurable message filter which 
+        take appropriate action. I used a combination of several simple heuristics for Yuuka, allowing for a highly configurable message filter which 
         could be tuned to flag the scam messages.<br><br>
         The first heuristic was a weighted message score, where Yuuka would have a database of flagged words and their respective weights. When a message is sent, Yuuka reads 
         each word in the message and adds the weight of the word to a cumulative message score, if the flagged word appears in the message. This allows for fine-tuning of the 
